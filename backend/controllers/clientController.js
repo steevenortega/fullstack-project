@@ -1,4 +1,4 @@
-const clientModel = require('../models/Client');
+const clientModel = require('../models/client');
 
 const getClients = (req, res) =>  {
     clientModel
@@ -20,7 +20,7 @@ const getClient = (req, res) => {
 const insertClient = (req, res) => {
     const { nombres } = req.body
 
-    if(first_name !== '' && last_name !== ''){
+    {
         clientModel
             .insertClient({ nombres })
             .then(results => res.status(201).json(results))
