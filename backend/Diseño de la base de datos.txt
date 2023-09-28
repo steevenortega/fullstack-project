@@ -1,0 +1,63 @@
+CREATE TABLE clients  (
+    id SERIAL PRIMARY KEY,
+    nombres VARCHAR(100)
+);
+
+
+CREATE TABLE habilidad (
+    id SERIAL PRIMARY KEY,
+    nombres VARCHAR(100)
+);
+
+CREATE TABLE empresa (
+    id SERIAL PRIMARY KEY,
+    nombres VARCHAR(100)
+);
+
+CREATE TABLE contrato (
+    id SERIAL PRIMARY KEY,
+    fecha_inicio DATE,
+    fecha_fin DATE,
+    valor_contrato INT
+);
+
+
+CREATE TABLE pago (
+	id SERIAL PRIMARY KEY,
+    id_contrato INT,
+    fecha_pago DATE,
+    monto INT
+);
+
+CREATE TABLE calificacion (
+	id SERIAL PRIMARY KEY,
+    id_contrato INT,
+	calificacion INT,
+    fecha_calificacion DATE
+    
+);
+
+ALTER TABLE pago
+ADD CONSTRAINT fk_contrato
+FOREIGN KEY (id_contrato)
+REFERENCES contrato(id);
+
+ALTER TABLE calificacion
+ADD CONSTRAINT fk_contrato
+FOREIGN KEY (id_contrato)
+REFERENCES contrato(id);
+
+ALTER TABLE contrato
+ADD CONSTRAINT fk_persona
+FOREIGN KEY (id)
+REFERENCES persona(id);
+
+ALTER TABLE habilidad
+ADD CONSTRAINT fk_persona
+FOREIGN KEY (id)
+REFERENCES persona(id);
+
+ALTER TABLE empresa
+ADD CONSTRAINT fk_contrato
+FOREIGN KEY (id)
+REFERENCES contrato(id);
