@@ -5,7 +5,7 @@ import { Button, Form, FormGroup, Input, Label } from "reactstrap"
 
 export default function CreateCompany() {
   const navigate = useNavigate()
-  const [newCompany, setNewCompany] = useState({ name: '' })
+  const [newCompany, setNewCompany] = useState({ nombre_empresa: '' })
   const [errorMessage, setErrorMessage] = useState('')
 
   const getHandler = (name) => {
@@ -17,7 +17,7 @@ export default function CreateCompany() {
 
     axios.post(
       `http://localhost:3000/companies/`,
-      { name: newCompany.name }
+      { nombre_empresa: newCompany.nombre_empresa }
     )
       .then(res => {
         // Si la actualización sale bien
@@ -41,13 +41,13 @@ export default function CreateCompany() {
         }
 
         <FormGroup>
-          <Label for="name">Nombre</Label>
+          <Label for="nombre_empresa">Nombre</Label>
           <Input
-            id="name"
-            name="name"
+            id="nombre_empresa"
+            nombre_empresa="nombre_empresa"
             type="text"
-            value={newCompany.name}
-            onChange={getHandler('name')}
+            value={newCompany.nombre_empresa}
+            onChange={getHandler('nombre_empresa')}
           />
         </FormGroup>
         <Button color="success">Guardar</Button>

@@ -5,7 +5,7 @@ const port = 3000;
 const Routes = require('./routes');
 
 server.use(express.json());
-server.use(function (req, res, next) {res.setHeader('Access-Control-Allow-Origin', '*');res.setHeader('Access-Control-Allow-Methods', 'GET');res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');next();});
+server.use(function (req, res, next) {res.setHeader('Access-Control-Allow-Origin', '*');res.setHeader('Access-Control-Allow-Methods', 'GET,DELETE,PATCH');res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');next();});
 server.use('/clients', Routes.ClientRoutes);
 server.use('/skills', Routes.SkillRoutes);
 server.use('/contracts', Routes.ContractRoutes);

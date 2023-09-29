@@ -93,10 +93,10 @@ function Company() {
       <Modal isOpen={modal} toggle={() => setModal(!modal)}>
         <ModalHeader toggle={() => setModal(!modal)}>Modal title</ModalHeader>
         <ModalBody>
-          ¿Estas seguro de eliminar la empresa <span className="fw-bold"> {aboutToDeleteCompany.name}</span>?
+          ¿Estas seguro de eliminar la empresa <span className="fw-bold"> {aboutToDeleteCompany.nombre_empresa}</span>?
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={() => handleDeleteCompany(aboutToDeleteCompany._id)}>
+          <Button color="primary" onClick={() => handleDeleteCompany(aboutToDeleteCompany.id)}>
             Eliminar
           </Button>{' '}
           <Button color="secondary" onClick={() => setModal(false)}>

@@ -11,7 +11,7 @@ router.get('/', CompanyController.getCompanies);
 router.post('/', CompanyController.insertCompany);
 
 // Actualizamos una habilidad
-router.put('/:id', CompanyController.updateCompany)
+router.patch('/:id', CompanyController.updateCompany)
 
 // Eliminar una habilidad
 router.delete('/:id',CompanyController.deleteCompany)
