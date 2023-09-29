@@ -14,6 +14,8 @@ import Contract from './views/Contract';
 import Payment from './views/Payment';
 import Rating from './views/Rating';
 import Skill from './views/Skill';
+import EditCompany from './views/EditCompany';
+import CreateCompany from './views/CreateCompany';
 
 const router = createBrowserRouter([
   {
@@ -35,8 +37,16 @@ const router = createBrowserRouter([
         ]
       },
       {
-        path: "company",
+        path:"company/",
         element: <Company/>,
+      },
+      {
+        path: "company/edit/:id",
+        element: <EditCompany />
+      },
+      {
+        path: "company/create",
+        element: <CreateCompany />
       },
       {
         path: "contract",

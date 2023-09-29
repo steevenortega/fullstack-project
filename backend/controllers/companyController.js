@@ -18,11 +18,11 @@ const getCompany = (req, res) => {
 };
 
 const insertCompany = (req, res) => {
-    const { nombres } = req.body
+    const { nombre_empresa } = req.body
 
-    if(first_name !== '' && last_name !== ''){
+    {
         companyModel
-            .insertCompany({ nombres})
+            .insertCompany({ nombre_empresa})
             .then(results => res.status(201).json(results))
             .catch(error => res.status(500).json(error));
     }
@@ -30,10 +30,10 @@ const insertCompany = (req, res) => {
 
 const updateCompany = (req, res) => {
     const { id } = req.params
-    const { nombres } = req.body
+    const { nombre_empresa } = req.body
 
     companyModel
-        .updateCompany(id,{ nombres})
+        .updateCompany(id,{ nombre_empresa})
         .then(results => res.status(201).json(results))
         .catch(error => res.status(500).json(error));
 }
