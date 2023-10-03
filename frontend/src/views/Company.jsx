@@ -15,16 +15,25 @@ function Company() {
     const [companies, setCompanies] = useState([]);
     const [modal, setModal] = useState(false)
     const [aboutToDeleteCompany, setAboutToDeleteCompany] = useState({})
-  
-    useEffect(() => {
-  
+
+
+    const getCompanies = () => {
       axios.get('http://localhost:3000/companies/')
       
-        .then(response => {
-            setCompanies(response.data)
-        })
+      .then(response => {
+          setCompanies(response.data)
+      })
+    }
+  
+    useEffect(() => {
+
+      getCompanies();
+  
+     
       
   }, []);
+
+  
 
   const openModal = (company) => {
     setModal(true)
@@ -34,7 +43,7 @@ function Company() {
   const handleDeleteCompany = (id) => {
     axios.delete(`http://localhost:3000/companies/${id}`)
       .then(res => {
-        navigate('/company')
+        getCompanies();
       })
     setModal(false)
   }
@@ -98,7 +107,7 @@ function Company() {
         <ModalFooter>
           <Button color="primary" onClick={() => handleDeleteCompany(aboutToDeleteCompany.id)}>
             Eliminar
-          </Button>{' '}
+          </Button>{' '}          
           <Button color="secondary" onClick={() => setModal(false)}>
             Cancel
           </Button>
