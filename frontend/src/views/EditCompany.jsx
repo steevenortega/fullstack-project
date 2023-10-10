@@ -15,7 +15,8 @@ export default function EditCompany() {
   //console.log(company.nombre_empresa);
 
   useEffect(()=> {
-    axios.get(`http://localhost:3000/companies/${id}`)
+    const API_URL = import.meta.env.VITE_API_URL
+    axios.get(`${API_URL}/companies/${id}`)
       .then((res)=> {
         setCompany(res.data[0])
         setNewCompany(res.data[0])
@@ -31,10 +32,11 @@ export default function EditCompany() {
 
   // Función que maneja el envio del formulario
   const handleSubmit = (e) => {
+    const API_URL = import.meta.env.VITE_API_URL
     e.preventDefault()
 
     axios.patch(
-      `http://localhost:3000/companies/${id}`,
+      `${API_URL}/companies/${id}`,
       {nombre_empresa: newCompany.nombre_empresa}
     )
       .then(res => {

@@ -19,7 +19,8 @@ function Rating() {
 
 
     const getRatings = () => {
-      axios.get('http://localhost:3000/ratings/')
+      const API_URL = import.meta.env.VITE_API_URL
+      axios.get(`${API_URL}/ratings/`)
       
       
       .then(response => {
@@ -44,7 +45,8 @@ function Rating() {
   }
 
   const handleDeleteRating = (id) => {
-    axios.delete(`http://localhost:3000/ratings/${id}`)
+    const API_URL = import.meta.env.VITE_API_URL
+    axios.delete(`${API_URL}/ratings/${id}`)
       .then(res => {
         getRatings();
       })

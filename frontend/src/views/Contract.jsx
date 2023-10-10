@@ -18,7 +18,8 @@ function Contract() {
 
 
     const getContracts = () => {
-      axios.get('http://localhost:3000/contracts/')
+      const API_URL = import.meta.env.VITE_API_URL
+      axios.get(`${API_URL}/contracts/`)
       
       
       .then(response => {
@@ -43,7 +44,8 @@ function Contract() {
   }
 
   const handleDeleteContract = (id) => {
-    axios.delete(`http://localhost:3000/contracts/${id}`)
+    const API_URL = import.meta.env.VITE_API_URL
+    axios.delete(`${API_URL}/contracts/${id}`)
       .then(res => {
         getContracts();
       })

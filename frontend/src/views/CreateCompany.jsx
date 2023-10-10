@@ -13,10 +13,11 @@ export default function CreateCompany() {
   }
 
   const handleSubmit = (e) => {
+    const API_URL = import.meta.env.VITE_API_URL
     e.preventDefault()
 
     axios.post(
-      `http://localhost:3000/companies/`,
+      `${API_URL}/companies/`,
       { nombre_empresa: newCompany.nombre_empresa }
     )
       .then(res => {

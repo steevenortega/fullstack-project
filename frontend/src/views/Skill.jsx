@@ -19,7 +19,8 @@ function Skill() {
 
 
     const getSkills = () => {
-      axios.get('http://localhost:3000/skills/')
+      const API_URL = import.meta.env.VITE_API_URL
+      axios.get(`${API_URL}/skills/`)
       
       
       .then(response => {
@@ -44,7 +45,8 @@ function Skill() {
   }
 
   const handleDeleteSkill = (id) => {
-    axios.delete(`http://localhost:3000/skills/${id}`)
+    const API_URL = import.meta.env.VITE_API_URL
+    axios.delete(`${API_URL}/skills/${id}`)
       .then(res => {
         getSkills();
       })

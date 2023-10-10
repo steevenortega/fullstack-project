@@ -18,7 +18,8 @@ function Payment() {
 
 
     const getPayments = () => {
-      axios.get('http://localhost:3000/payments/')
+      const API_URL = import.meta.env.VITE_API_URL
+      axios.get(`${API_URL}/payments/`)
       
       
       .then(response => {
@@ -43,7 +44,8 @@ function Payment() {
   }
 
   const handleDeletePayment = (id) => {
-    axios.delete(`http://localhost:3000/payments/${id}`)
+    const API_URL = import.meta.env.VITE_API_URL
+    axios.delete(`${API_URL}/payments/${id}`)
       .then(res => {
         getPayments();
       })

@@ -18,7 +18,8 @@ function Company() {
 
 
     const getCompanies = () => {
-      axios.get('http://localhost:3000/companies/')
+      const API_URL = import.meta.env.VITE_API_URL
+      axios.get(`${API_URL}/companies/`)      
       
       .then(response => {
           setCompanies(response.data)
@@ -41,7 +42,8 @@ function Company() {
   }
 
   const handleDeleteCompany = (id) => {
-    axios.delete(`http://localhost:3000/companies/${id}`)
+    const API_URL = import.meta.env.VITE_API_URL
+    axios.delete(`${API_URL}/companies/${id}`)
       .then(res => {
         getCompanies();
       })

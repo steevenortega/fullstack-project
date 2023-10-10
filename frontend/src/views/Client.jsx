@@ -18,7 +18,8 @@ function Client() {
 
 
     const getClients = () => {
-      axios.get('http://localhost:3000/clients/')
+      const API_URL = import.meta.env.VITE_API_URL
+      axios.get(`${API_URL}/clients/`)
       
       
       .then(response => {
@@ -43,7 +44,8 @@ function Client() {
   }
 
   const handleDeleteClient = (id) => {
-    axios.delete(`http://localhost:3000/clients/${id}`)
+    const API_URL = import.meta.env.VITE_API_URL
+    axios.delete(`${API_URL}/companies//clients/${id}`)
       .then(res => {
         getClients();
       })
