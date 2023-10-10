@@ -8,10 +8,10 @@ module.exports = {
     development: {
       client: 'postgresql',
       connection: {
-        host: 'localhost',
-        database: 'postgres', 
-        user: 'postgres',
-        password: 'root',
+        host: 'stampy.db.elephantsql.com',
+        database: 'mennzvao', 
+        user: 'mennzvao',
+        password: 'MhyQ_NRo68ZGyGFuapXn9mtPveaNqKhf',
       },
       pool: {
         min: 2,
