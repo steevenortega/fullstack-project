@@ -36,10 +36,7 @@ const Navbar = () => {
                     <Link to="/skill">Habilidades</Link>
 
                 </NavItem>
-                <NavItem className="m-2">
-                    <Link to="/contact">¡Contáctanos!</Link>
-
-                </NavItem>
+               
             </Nav>
         </>
     );

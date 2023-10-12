@@ -1,8 +1,8 @@
 const About = () => {
     return (
         <section>
-            <h1>Mi empresa</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam magnam voluptates a praesentium beatae quaerat earum ab odio quibusdam minima cumque amet deserunt ut, fugiat molestias vitae sed dolorem eius!</p>
+            <h1>¿Quiénes somos?</h1>
+            <p>Somos la puerta hacia tu próximo desafío profesional. En nuestra plataforma, almacenamos tus habilidades para que las empresas ideales te encuentren. Además, nos encargamos de toda la gestión contractual, asegurando pagos oportunos y recopilando valiosas calificaciones para tu perfil. Deja que tu talento brille con nosotros</p>
         
         </section>
         
