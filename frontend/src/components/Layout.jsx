@@ -4,8 +4,12 @@ import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
     return (
-        <Container className="bg-light border">
-<body class="text-center">
+        <Container className="min-vh-100 bg-light border">
+
+
+            <Navbar></Navbar>
+            <Outlet></Outlet>
+            <body class="text-center">
 
 <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
   <header class="masthead mb-auto">
@@ -26,9 +30,6 @@ const Layout = () => {
   
 </div>
 </body>
-
-            <Navbar></Navbar>
-            <Outlet></Outlet>
             <footer class="mastfoot mt-auto">
     <div class="inner">
       <p>Template for <a href="https://6524cf8e67d16b786fed090e--peaceful-dodol-adeffa.netlify.app/">TinderHabilidades</a>, by <a href="https://twitter.com/mdo">SteevenOrtega</a>.</p>
